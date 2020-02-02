@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\ClockBehavior.cs" />
     <Compile Include="Assets\PlayerBehavior.cs" />
+    <Compile Include="Assets\ShopBehavior.cs" />
     <Compile Include="Assets\Spawner.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/marce/Desktop/GGJ20/ClockHouse/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>

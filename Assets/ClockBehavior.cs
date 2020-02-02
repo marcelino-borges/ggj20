@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class ClockBehavior : MonoBehaviour
 {
-
     [HideInInspector]
-    public static bool isRinging;
+    public static int ringingClocks;
+    
+    private bool isRinging;
 
     private float timer;
 
@@ -19,15 +20,28 @@ public class ClockBehavior : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        if (timer <= 0)
+        if (timer <= 0 && !isRinging)
         {
             isRinging = true;
+            AddToRingingClocks();
             //Start ringing in audio;
         }
     }
 
+    void AddToRingingClocks()
+    {
+        ringingClocks++;
+    }
+
+    public void DeactivateClock()
+    {
+        ringingClocks--;
+        isRinging = false;
+        SetTimer();
+    }
+
     public void SetTimer()
     {
-        timer = Random.Range(7, 20);
+        timer = Random.Range(20, 60);
     }
 }
