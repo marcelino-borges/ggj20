@@ -65,6 +65,10 @@ public class PlayerBehavior : MonoBehaviour
             Destroy(collision.gameObject);
             money++;
         }
+        if (collision.gameObject.tag == "Boss")
+        {
+            Application.Quit();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D collision)
